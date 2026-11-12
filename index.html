@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quintal da Terra | Produtos Naturais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#b0db9c; --sage-soft:#dff0d3; --olive:#5f6648; --leaf:#3e4a2d; --paper:#f4f9ec; --card:#ffffff; --honey:#e0a93b; --line:rgba(95,102,72,.22);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sage:#6f9a5b;--sage-soft:#26301f;--olive:#c9d3b0;--leaf:#e4ecd2;--paper:#171c13;--card:#212819;--line:rgba(201,211,176,.22)}}
+:root[data-theme="dark"]{--sage:#6f9a5b;--sage-soft:#26301f;--olive:#c9d3b0;--leaf:#e4ecd2;--paper:#171c13;--card:#212819;--line:rgba(201,211,176,.22)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--leaf);font-family:'Quicksand',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.5}
+.wrap{max-width:460px;margin:0 auto;padding:0 18px 40px}
+.hero{background:var(--sage);margin:0 -18px;padding:36px 22px 56px;text-align:center;border-radius:0 0 50% 50%/0 0 34px 34px;color:var(--leaf)}
+.hero svg.logo{width:92px;height:auto;fill:var(--olive)}
+.hero h1{margin:10px 0 0;font-size:2rem;line-height:1.1;font-weight:700;color:var(--olive)}
+.hero .sub{margin:4px 0 0;font-size:.95rem;color:var(--olive)}
+.hero .hand{font-family:'Caveat','Segoe Script',cursive;font-size:1.7rem;margin:14px 0 0;color:var(--leaf)}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:6px 14px;border-radius:99px;background:var(--paper);font-size:.85rem;font-weight:500;color:var(--leaf)}
+.dot{width:9px;height:9px;border-radius:50%;background:#9aa28a}
+.dot.on{background:#3aa55a;box-shadow:0 0 0 4px rgba(58,165,90,.2)}
+.links{display:grid;gap:12px;margin:-28px 0 0;position:relative}
+.btn{display:flex;align-items:center;gap:14px;width:100%;padding:15px 18px;border:1.5px solid var(--line);border-radius:18px;background:var(--card);color:var(--leaf);font:inherit;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;text-align:left;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn:hover{background:var(--sage-soft)}
+.btn:focus-visible,.copy:focus-visible,.pcta:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+.btn .ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--sage);color:var(--leaf)}
+.btn .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn small{display:block;font-weight:400;font-size:.8rem;color:var(--olive)}
+.btn.main{background:var(--olive);color:#fff;border-color:var(--olive)}
+.btn.main small{color:#e5ecd6}
+.btn.main .ic{background:var(--sage);color:var(--leaf)}
+.btn.main:hover{background:var(--leaf)}
+.copy{margin-left:auto;flex:none;border:1.5px solid var(--line);background:transparent;color:inherit;border-radius:10px;padding:6px 10px;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer}
+.btn.main .copy{border-color:rgba(255,255,255,.45)}
+h2{font-size:1.35rem;margin:34px 0 2px;color:var(--olive)}
+.lead{margin:0 0 14px;font-size:.92rem;color:var(--olive)}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:4px 18px 10px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.prod{flex:0 0 78%;scroll-snap-align:center;background:var(--card);border:1.5px solid var(--line);border-radius:22px;overflow:hidden}
+.prod .art{background:var(--sage-soft);display:grid;place-items:center;padding:18px 0 8px}
+.prod .art svg{width:150px;height:150px}
+.prod .txt{padding:14px 16px 16px}
+.prod h3{margin:0;font-size:1.1rem}
+.prod p{margin:4px 0 12px;font-size:.88rem;color:var(--olive)}
+.pcta{display:inline-block;padding:10px 16px;border-radius:12px;background:var(--olive);color:#fff;font-weight:700;font-size:.9rem;text-decoration:none}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:all .2s}
+.dots i.on{background:var(--olive);width:20px;border-radius:4px}
+.hours{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:14px 18px;margin-top:14px;font-size:.92rem}
+.hours b{color:var(--olive)}
+footer{text-align:center;margin-top:34px;font-size:.82rem;color:var(--olive)}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--leaf);color:var(--paper);padding:10px 18px;border-radius:99px;font-size:.88rem;font-weight:700;opacity:0;pointer-events:none;transition:all .25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <svg class="logo" viewBox="0 0 100 110" role="img" aria-label="Folha de costela-de-adão"><path d="M52 104c-1-14 0-28 1-40-20 6-42-4-46-24C4 18 28 4 52 6c26 0 46 18 42 38-3 17-20 24-34 22-1 12-2 26-3 38z"/><g stroke="var(--sage)" stroke-width="4.5" stroke-linecap="round" fill="none"><path d="M52 62 22 30M52 62 16 50M52 62 30 72M52 62 78 28M52 62 86 46M52 62 74 70"/></g><g fill="var(--sage)"><circle cx="52" cy="40" r="2.5"/><circle cx="46" cy="50" r="2.5"/><circle cx="58" cy="50" r="2.5"/></g></svg>
+    <h1>Quintal da Terra</h1>
+    <p class="sub">Produtos Naturais · Nova Esperança, Parnamirim-RN</p>
+    <p class="hand">Do nosso quintal para a sua vida!</p>
+    <div class="status"><span class="dot" id="dot"></span><span id="st">Verificando horário…</span></div>
+  </header>
+
+  <nav class="links" aria-label="Links principais">
+    <a class="btn main" id="wa" href="https://wa.me/5584988244990?text=Ol%C3%A1!%20Vim%20pelo%20Instagram%20da%20Quintal%20da%20Terra." target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12z"/><path d="M9 8.5c.5 3 2.5 5 5.5 6l1.3-1.3-2-1-1 .7c-.8-.4-1.600-1.200-2-2l.7-1-1-2z"/></svg></span>
+      <span>Faça seu pedido<small>Fale com a gente no WhatsApp</small></span>
+    </a>
+    <a class="btn" href="https://www.instagram.com/lojaquintaldaterra" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r=".6"/></svg></span>
+      <span>Siga no Instagram<small>@lojaquintaldaterra</small></span>
+    </a>
+    <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJb-AqWAJZsgcRr7thP1sFD2g" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="m12 3 2.700 5.600 6.100.9-4.400 4.300 1 6.100L12 17l-5.400 2.900 1-6.100L3.200 9.500l6.100-.9z"/></svg></span>
+      <span>Avalie no Google<small>Sua opinião ajuda nosso quintal a crescer</small></span>
+    </a>
+    <a class="btn" href="https://maps.app.goo.gl/DyrFzpo3VS8A4RY78?g_st=ipc" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></span>
+      <span>Como chegar<small>Nova Esperança, Parnamirim-RN</small></span>
+    </a>
+    <a class="btn" href="https://chat.whatsapp.com/GWlpwXnnQ3Y4pskVVrwmws?s=cl&p=a&ilr=0" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20a6.500 6.500 0 0 1 13 0"/><circle cx="17" cy="9" r="2.500"/><path d="M17 14a5 5 0 0 1 4.500 5"/></svg></span>
+      <span>Grupo de clientes<small>Entre e receba novidades e ofertas</small></span>
+    </a>
+  </nav>
+
+  <h2>Direto do quintal</h2>
+  <p class="lead">Toque em um produto para pedir pelo WhatsApp.</p>
+  <div class="rail" id="rail">
+    <article class="prod">
+      <div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Pote de granola"><rect x="30" y="14" width="60" height="14" rx="4" fill="#5f6648"/><path d="M34 28h52v68a10 10 0 0 1-10 10H44a10 10 0 0 1-10-10z" fill="#fff" stroke="#5f6648" stroke-width="3"/><path d="M37 52h46v44a7 7 0 0 1-7 7H44a7 7 0 0 1-7-7z" fill="#d9a65a"/><g fill="#a8702f"><circle cx="48" cy="62" r="4"/><circle cx="64" cy="58" r="3.500"/><circle cx="74" cy="70" r="4"/><circle cx="54" cy="78" r="3.500"/><circle cx="68" cy="88" r="4"/><circle cx="46" cy="92" r="3"/></g><rect x="40" y="34" width="40" height="14" rx="7" fill="#b0db9c"/></svg></div>
+      <div class="txt"><h3>Granolas e grãos</h3><p>Opções para o café da manhã e para o lanche do dia a dia.</p><a class="pcta" href="https://wa.me/5584988244990?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20as%20granolas%20e%20gr%C3%A3os." target="_blank" rel="noopener">Pedir no WhatsApp</a></div>
+    </article>
+    <article class="prod">
+      <div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Pote de mel"><rect x="32" y="16" width="56" height="12" rx="4" fill="#5f6648"/><path d="M36 28h48l6 16v46a14 14 0 0 1-14 14H44a14 14 0 0 1-14-14V44z" fill="#e0a93b" stroke="#5f6648" stroke-width="3"/><path d="M36 28h48l4 10H32z" fill="#f2c869"/><rect x="40" y="58" width="40" height="30" rx="8" fill="#fff"/><path d="M60 64c-5 0-8 4-8 8s3 8 8 8 8-4 8-8-3-8-8-8z" fill="#b0db9c"/><path d="M60 28v14c0 5 6 5 6 0V28z" fill="#e0a93b" opacity=".0"/></svg></div>
+      <div class="txt"><h3>Mel e doces naturais</h3><p>Sabor de verdade, feito com ingredientes simples.</p><a class="pcta" href="https://wa.me/5584988244990?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20mel%20e%20os%20doces%20naturais." target="_blank" rel="noopener">Pedir no WhatsApp</a></div>
+    </article>
+    <article class="prod">
+      <div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Xícara de chá com folhas"><path d="M60 18c-14 4-20 16-12 30 6-8 10-18 12-30zM60 18c14 4 20 16 12 30-6-8-10-18-12-30z" fill="#7fb36a"/><path d="M60 24v26" stroke="#5f6648" stroke-width="2.500" stroke-linecap="round"/><path d="M26 60h60v18a26 26 0 0 1-26 26 26 26 0 0 1-26-26z" fill="#fff" stroke="#5f6648" stroke-width="3"/><path d="M86 66h6a10 10 0 0 1 0 20h-8" fill="none" stroke="#5f6648" stroke-width="3"/><path d="M30 66h52v6a24 24 0 0 1-52 0z" fill="#b0db9c"/><ellipse cx="60" cy="110" rx="34" ry="4" fill="#5f6648" opacity=".18"/></svg></div>
+      <div class="txt"><h3>Chás e ervas</h3><p>Para uma pausa no dia, com cuidado e bem-estar.</p><a class="pcta" href="https://wa.me/5584988244990?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20ch%C3%A1s%20e%20ervas." target="_blank" rel="noopener">Pedir no WhatsApp</a></div>
+    </article>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+
+  <div class="hours"><b>Horário de atendimento</b><br>Segunda a sábado, das 9h às 19h</div>
+
+  <footer>Quintal da Terra · Nova Esperança, Parnamirim-RN<br>Mais saúde, mais qualidade de vida.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var toast=document.getElementById('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2200)}
+  function status(){
+    var d,h,m,day;
+    try{
+      var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Fortaleza',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+      var o={};p.forEach(function(x){o[x.type]=x.value});
+      day=o.weekday;h=parseInt(o.hour,10)%24;m=parseInt(o.minute,10);
+    }catch(e){var n=new Date();day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][n.getDay()];h=n.getHours();m=n.getMinutes()}
+    var open=day!=='Sun'&&h>=9&&h<19;
+    document.getElementById('dot').className='dot'+(open?' on':'');
+    document.getElementById('st').textContent=open?'Aberto agora · até 19h':(day==='Sun'||(day==='Sat'&&h>=19)?'Fechado · abrimos segunda às 9h':(h<9?'Fechado · abrimos hoje às 9h':'Fechado · abrimos amanhã às 9h'));
+  }
+  status();setInterval(status,60000);
+  var rail=document.getElementById('rail'),dots=document.querySelectorAll('#dots i');
+  rail.addEventListener('scroll',function(){
+    var c=rail.children,mid=rail.scrollLeft+rail.clientWidth/2,best=0,bd=1e9;
+    for(var i=0;i<c.length;i++){var cx=c[i].offsetLeft+c[i].offsetWidth/2,dd=Math.abs(cx-mid);if(dd<bd){bd=dd;best=i}}
+    for(var j=0;j<dots.length;j++)dots[j].className=j===best?'on':'';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
